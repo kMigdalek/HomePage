@@ -1,0 +1,1267 @@
+@import url("https://fonts.googleapis.com/css2?family=Cardo&family=Monoton&family=Roboto:wght@400;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+}
+body {
+  width: 100%;
+  overflow-x: hidden;
+}
+/* header */
+
+#home {
+  background-image: url(tło3.png);
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  height: 100vh;
+  animation: spacemove 20s linear infinite alternate;
+  transition: 2s;
+}
+@keyframes spacemove {
+  0% {
+    background-position: left;
+  }
+  100% {
+    background-position: right;
+  }
+}
+.title {
+  width: 100%;
+  position: absolute;
+  text-align: center;
+  color: white;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.titleFont {
+  font-size: 22px;
+  margin-bottom: 5px;
+}
+span {
+  color: #ff00ff;
+}
+.vievWorks {
+  width: 200px;
+  height: 50px;
+  border: 3px solid white;
+  margin: 30px auto;
+  line-height: 45px;
+  font-size: 20px;
+  font-weight: 300;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.vievWorks i {
+  transition: 0.3s;
+}
+.vievWorks:hover {
+  background-color: deepskyblue;
+  color: black;
+}
+.vievWorks:hover i {
+  transform: rotate(90deg);
+}
+
+@media (min-width: 410px) and (orientation: portrait) {
+  .titleFont {
+    font-size: 30px;
+  }
+  .vievWorks {
+    width: 300px;
+    height: 60px;
+    line-height: 60px;
+    font-size: 28px;
+  }
+}
+@media (min-width: 768px) and (orientation: portrait) {
+  .title {
+    top: 45%;
+  }
+  .titleFont {
+    font-size: 40px;
+  }
+  .vievWorks {
+    width: 400px;
+    height: 80px;
+    line-height: 80px;
+    font-size: 36px;
+  }
+}
+@media (orientation: landscape) {
+  .title {
+    top: 45%;
+  }
+  .titleFont {
+    font-size: 20px;
+  }
+  .vievWorks {
+    width: 200px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 18px;
+  }
+}
+@media (orientation: landscape) and (min-width: 640px) {
+  .titleFont {
+    font-size: 28px;
+  }
+  .vievWorks {
+    width: 400px;
+    height: 60px;
+    line-height: 60px;
+    font-size: 26px;
+  }
+}
+
+@media (orientation: landscape) and (min-width: 1024px) {
+  #home {
+    background-size: 140%;
+  }
+  .title {
+    top: 42%;
+  }
+  .titleFont {
+    font-size: 36px;
+  }
+  .vievWorks {
+    width: 400px;
+    height: 70px;
+    line-height: 70px;
+    font-size: 32px;
+  }
+}
+
+/* menu */
+.burger {
+  position: fixed;
+  top: 2vh;
+  right: 3vh;
+  line-height: 6vh;
+  color: white;
+  font-size: 26px;
+  cursor: pointer;
+  z-index: 5;
+}
+nav {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: -40%;
+  left: 0;
+  width: 100vw;
+  height: 40%;
+  background-color: #222;
+  transition: 0.5s;
+  z-index: 1;
+}
+.menuButton {
+  align-items: center;
+  text-transform: uppercase;
+  display: flex;
+  color: white;
+  margin-left: 15px;
+  position: relative;
+  flex-grow: 1;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.4s;
+}
+.menuButton:nth-of-type(1) {
+  opacity: 1;
+  background-color: #111;
+  margin-left: 0;
+  border-bottom: 2px solid deepskyblue;
+  height: 6vh;
+}
+nav.show {
+  top: 0;
+}
+.violet {
+  color: #ff00ff;
+}
+@media (min-width: 380px) and (orientation: portrait) {
+  .burger {
+    font-size: 38px;
+  }
+  .menuButton {
+    font-size: 18px;
+  }
+}
+@media (min-width: 768px) and (orientation: portrait) {
+  .burger {
+    font-size: 46px;
+  }
+  .menuButton {
+    font-size: 22px;
+  }
+}
+@media (orientation: landscape) {
+  nav {
+    height: 60%;
+    top: -60%;
+  }
+  .burger {
+    font-size: 24px;
+  }
+  .menuButton {
+    font-size: 14px;
+  }
+  .menuButton:nth-of-type(1) {
+    height: 7vh;
+  }
+}
+@media (orientation: landscape) and (min-width: 640px) {
+  .burger {
+    font-size: 32px;
+  }
+  .menuButton {
+    font-size: 18px;
+  }
+}
+@media (orientation: landscape) and (min-width: 1024px) {
+  .burger {
+    display: none;
+  }
+  nav {
+    position: absolute;
+    justify-content: flex-start;
+    flex-direction: row;
+    padding-left: 10vw;
+    top: 100vh;
+    height: 8%;
+    border-bottom: 2px solid deepskyblue;
+    transition: 0s;
+  }
+  nav.fixed {
+    position: fixed;
+    top: 0vh;
+  }
+  .menuButton {
+    justify-content: center;
+    margin-left: 0px;
+    flex-grow: 0;
+    flex-basis: 8%;
+    font-size: 16px;
+  }
+  .menuButton:nth-of-type(1) {
+    display: none;
+  }
+}
+@media (orientation: landscape) and (min-width: 1400px) {
+  nav {
+    height: 6%;
+  }
+  .menuButton {
+    flex-basis: 6%;
+  }
+}
+
+/* about */
+
+section#about {
+  color: black;
+}
+
+.aboutName {
+  display: inline-block;
+  position: relative;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  margin: 50px 0;
+  border-bottom: 4px solid #333;
+  border-radius: 7%;
+}
+h2.aboutTitle {
+  font-size: 40px;
+  font-weight: 700;
+  color: #333;
+  text-transform: uppercase;
+}
+
+.aboutWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.aboutButton {
+  width: 25%;
+  margin: 0 12.5%;
+  margin-bottom: 50px;
+  text-align: center;
+}
+.aboutPicture {
+  height: 25vw;
+  background-color: #00ff7f;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+.aboutPicture i {
+  font-size: 30px;
+}
+.aboutPicture ~ h2 {
+  font-size: 18px;
+  font-weight: 700;
+}
+.aboutPicture ~ h3 {
+  margin-top: 5px;
+  font-size: 12px;
+}
+
+.meWrapper {
+  max-width: 80%;
+  margin: 0 10%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.mePhoto {
+  width: 70vw;
+  height: 70vw;
+  margin: 0 auto;
+  background-image: url(photo.jpg);
+  background-position: top;
+  background-size: cover;
+  border-radius: 10%;
+}
+.mePhoto + h2 {
+  margin: 15px 0;
+  font-size: 22px;
+  font-weight: 700;
+  font-family: "Cardo", serif;
+}
+
+.mePhoto ~ h3 {
+  font-size: 10px;
+  line-height: 22px;
+  color: #333;
+}
+
+.skills {
+  margin-top: 30px;
+  margin-bottom: 60px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 50vh;
+  justify-content: space-between;
+}
+.skill {
+  flex-basis: 4vh;
+  background-color: #dcdcdc;
+  display: flex;
+}
+.skillname {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 25%;
+  background-color: #9400d3;
+  color: white;
+  font-weight: 700;
+  font-size: 10px;
+}
+.skilllevel {
+  width: 50%;
+  background-color: #ff00ff;
+}
+.skill:nth-of-type(1) > .skilllevel {
+  width: 65%;
+}
+.skill:nth-of-type(2) > .skilllevel {
+  width: 60%;
+}
+.skill:nth-of-type(3) > .skilllevel {
+  width: 55%;
+}
+.skill:nth-of-type(4) > .skilllevel {
+  width: 45%;
+}
+.skill:nth-of-type(5) > .skilllevel {
+  width: 40%;
+}
+.skill:nth-of-type(6) > .skilllevel {
+  width: 70%;
+}
+.skill:nth-of-type(7) > .skilllevel,
+.skill:nth-of-type(8) > .skilllevel {
+  width: 65%;
+}
+
+@media (min-width: 380px) and (orientation: portrait) {
+  h2.aboutTitle {
+    font-size: 45px;
+  }
+  .aboutButton {
+    width: 28%;
+    margin: 0 10%;
+    margin-bottom: 60px;
+  }
+  .aboutPicture {
+    height: 28vw;
+  }
+  .aboutPicture i {
+    font-size: 38px;
+  }
+  .aboutPicture ~ h2 {
+    font-size: 24px;
+  }
+  .aboutPicture ~ h3 {
+    margin-top: 5px;
+    font-size: 14px;
+    width: 120%;
+    transform: translateX(-5%);
+  }
+  .mePhoto + h2 {
+    font-size: 26px;
+  }
+  .mePhoto ~ h3 {
+    font-size: 13px;
+  }
+  .skills {
+    margin-top: 40px;
+    height: 35vh;
+  }
+  .skill {
+    flex-basis: 3vh;
+  }
+}
+@media (min-width: 520px) and (orientation: portrait) {
+}
+@media (min-width: 768px) and (orientation: portrait) {
+  h2.aboutTitle {
+    font-size: 60px;
+  }
+  .aboutButton {
+    width: 23%;
+    margin: 0 12%;
+    margin-bottom: 60px;
+  }
+  .aboutPicture {
+    height: 23vw;
+  }
+  .aboutPicture i {
+    font-size: 60px;
+  }
+  .aboutPicture ~ h2 {
+    font-size: 32px;
+  }
+  .aboutPicture ~ h3 {
+    font-size: 20px;
+  }
+  .mePhoto {
+    width: 50vw;
+    height: 50vw;
+  }
+  .mePhoto + h2 {
+    font-size: 32px;
+  }
+  .mePhoto ~ h3 {
+    font-size: 18px;
+  }
+  .skillname {
+    font-size: 16px;
+  }
+}
+@media (orientation: landscape) {
+  .aboutName {
+    margin: 25px 0;
+  }
+  h2.aboutTitle {
+    font-size: 35px;
+  }
+  .aboutButton {
+    width: 18%;
+    margin: 0 14%;
+    margin-bottom: 60px;
+  }
+  .aboutPicture {
+    height: 18vw;
+  }
+  .aboutPicture i {
+    font-size: 32px;
+  }
+  .aboutPicture ~ h2 {
+    font-size: 20px;
+  }
+  .aboutPicture ~ h3 {
+    font-size: 12px;
+    width: 120%;
+    transform: translateX(-5%);
+  }
+  .mePhoto {
+    width: 65vh;
+    height: 65vh;
+  }
+  .mePhoto + h2 {
+    font-size: 22px;
+  }
+  .mePhoto ~ h3 {
+    font-size: 10px;
+  }
+  .skills {
+    margin-top: 40px;
+    height: 60vh;
+  }
+  .skill {
+    flex-basis: 6vh;
+  }
+}
+
+@media (min-width: 840px) and (orientation: landscape) {
+  .aboutButton {
+    width: 12%;
+    margin: 0 6.5%;
+    margin-bottom: 60px;
+  }
+  .aboutPicture {
+    height: 12vw;
+  }
+  .meWrapper {
+    max-width: 100%;
+    margin: 0 5% 0 0;
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+  }
+  .mePhotoWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .mePhoto {
+    width: 40vh;
+    height: 40vh;
+  }
+  .mePhoto + h2 {
+    font-size: 18px;
+  }
+  .mePhoto ~ h3 {
+    max-width: 60%;
+    margin-bottom: 100px;
+  }
+  .skills {
+    margin-top: -100px;
+    width: 130%;
+    height: 60vh;
+  }
+
+  .skill {
+    flex-basis: 5vh;
+  }
+}
+
+@media (min-width: 1024px) and (orientation: landscape) {
+  .aboutName {
+    margin: 100px 0 50px;
+  }
+  h2.aboutTitle {
+    font-size: 45px;
+  }
+  .aboutPicture i {
+    font-size: 40px;
+  }
+  .aboutPicture ~ h2 {
+    font-size: 26px;
+  }
+  .aboutPicture ~ h3 {
+    font-size: 16px;
+    width: 200%;
+    transform: translateX(-25%);
+  }
+  .aboutButton {
+    margin-bottom: 120px;
+  }
+  .meWrapper {
+    margin: 0 5% 0 0;
+  }
+  .mePhoto {
+    width: 35vh;
+    height: 35vh;
+  }
+  .mePhoto + h2 {
+    font-size: 24px;
+  }
+  .mePhoto ~ h3 {
+    font-size: 15px;
+  }
+  .skills {
+    height: 45vh;
+    width: 150%;
+  }
+  .skill {
+    flex-basis: 3.5vh;
+  }
+  .skillname {
+    font-size: 16px;
+  }
+}
+@media (min-width: 1200px) and (orientation: landscape) {
+  h2.aboutTitle {
+    font-size: 45px;
+  }
+  .aboutButton {
+    width: 8%;
+    margin: 0 5%;
+    margin-bottom: 60px;
+  }
+  .aboutPicture {
+    height: 8vw;
+  }
+  .aboutPicture i {
+    font-size: 40px;
+  }
+  .aboutPicture ~ h2 {
+    font-size: 24px;
+  }
+  .aboutPicture ~ h3 {
+    font-size: 16px;
+    line-height: 20px;
+  }
+  .meWrapper {
+    margin: 3% 15% 0 10%;
+  }
+  .mePhoto {
+    width: 30vh;
+    height: 30vh;
+  }
+  .mePhoto + h2 {
+    font-size: 20px;
+  }
+  .mePhoto ~ h3 {
+    font-size: 12px;
+  }
+  .skills {
+    height: 50vh;
+  }
+  .skill {
+    flex-basis: 4vh;
+  }
+}
+@media (min-width: 1922px) and (orientation: landscape) {
+  .aboutPicture i {
+    font-size: 60px;
+  }
+  .aboutPicture ~ h2 {
+    font-size: 28px;
+  }
+  .aboutPicture ~ h3 {
+    font-size: 18px;
+    line-height: 26px;
+  }
+  .mePhoto ~ h3 {
+    font-size: 14px;
+  }
+}
+
+/* Portfolio */
+
+section#portfolio {
+  min-width: 100%;
+  background-color: #f8f8ff;
+}
+.portfolioWrapper {
+  display: flex;
+  flex-wrap: wrap;
+}
+.portfolioName {
+  display: inline-block;
+  position: relative;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  margin: 50px 0;
+  border-bottom: 4px solid #333;
+  border-radius: 7%;
+}
+h2.portfolioTitle {
+  font-size: 30px;
+  font-weight: 700;
+  color: #333;
+  text-transform: uppercase;
+}
+.project {
+  position: relative;
+  width: 100%;
+  background-color: red;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.projectPhoto1,
+.projectPhoto2,
+.projectPhoto3,
+.projectPhoto4 {
+  background-position: center;
+  background-size: cover;
+  height: 50vh;
+  transition: 0.3s;
+  transform: scale(1.2);
+  background-attachment: fixed;
+}
+.projectPhoto1 {
+  background-image: url(projekt1.jpg);
+}
+.projectPhoto2 {
+  background-image: url(projekt2.jpg);
+}
+.projectPhoto3 {
+  background-image: url(projekt3.jpg);
+}
+.projectPhoto4 {
+  background-image: url(projekt4.jpg);
+}
+.projectPhoto1:hover,
+.projectPhoto2:hover,
+.projectPhoto3:hover,
+.projectPhoto4:hover {
+  transform: scale(1);
+}
+.project > h2,
+.project > h3 {
+  position: absolute;
+  left: 10%;
+  color: white;
+  transition: 0.4s;
+}
+
+.project > h2 {
+  top: 50%;
+  font-family: "Monoton", cursive;
+  font-size: 46px;
+}
+.project > h3 {
+  top: calc(50% + 60px);
+  font-size: 32px;
+}
+.project > h3 > i {
+  margin-left: 20px;
+  color: #00ff7f;
+}
+
+i.move {
+  animation: arrowMove 0.8s infinite both linear;
+}
+.project > h2.move,
+.project > h3.move {
+  transform: scale(1.2);
+}
+@keyframes arrowMove {
+  0% {
+    transform: translateX(0px);
+  }
+  25% {
+    transform: translateX(-10px);
+  }
+  75% {
+    transform: translateX(10px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
+@media (min-width: 380px) and (orientation: portrait) {
+  h2.portfolioTitle {
+    font-size: 42px;
+  }
+  .portfolioName {
+    margin: 80px 0;
+  }
+  .project > h2 {
+    top: 46%;
+    font-size: 66px;
+  }
+  .project > h3 {
+    top: calc(46% + 80px);
+    font-size: 52px;
+  }
+}
+@media (min-width: 768px) and (orientation: portrait) {
+  h2.portfolioTitle {
+    font-size: 48px;
+  }
+  .portfolioName {
+    margin: 100px 0;
+  }
+  .project > h2,
+  .project > h3 {
+    left: 8%;
+  }
+  .project > h2 {
+    top: 52%;
+    font-size: 80px;
+  }
+  .project > h3 {
+    top: calc(52% + 100px);
+    font-size: 58px;
+  }
+}
+@media (orientation: landscape) {
+  .projectPhoto1,
+  .projectPhoto2,
+  .projectPhoto3,
+  .projectPhoto4 {
+    height: 100vh;
+  }
+}
+@media (min-width: 840px) and (orientation: landscape) {
+  .project > h2,
+  .project > h3 {
+    left: 8%;
+  }
+  .project > h2 {
+    top: 40%;
+    font-size: 90px;
+  }
+  .project > h3 {
+    top: calc(40% + 105px);
+    font-size: 65px;
+  }
+}
+@media (min-width: 1024px) and (orientation: landscape) {
+  h2.portfolioTitle {
+    font-size: 45px;
+  }
+  .portfolioName {
+    margin: 130px 0;
+  }
+  .project > h2 {
+    top: 60%;
+    font-size: 90px;
+  }
+  .project > h3 {
+    top: calc(60% + 105px);
+    font-size: 65px;
+  }
+}
+
+@media (min-width: 1200px) and (orientation: landscape) {
+  .project {
+    width: 25%;
+  }
+  .projectPhoto1,
+  .projectPhoto2,
+  .projectPhoto3,
+  .projectPhoto4 {
+    height: 100vh;
+  }
+  .project > h2,
+  .project > h3 {
+    left: 8%;
+  }
+  .project > h2 {
+    top: 60%;
+    font-size: 70px;
+  }
+  .project > h3 {
+    top: calc(60% + 90px);
+    font-size: 55px;
+  }
+}
+
+/* Blog */
+
+.blogName {
+  display: inline-block;
+  position: relative;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 50px 0;
+  border-bottom: 4px solid #333;
+  border-radius: 7%;
+}
+h2.blogTitle {
+  font-size: 30px;
+  font-weight: 700;
+  color: #333;
+  text-transform: uppercase;
+}
+.articleWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 90vw;
+}
+.articlephoto1 {
+  background-image: url(blog1.jpg);
+}
+.articlephoto2 {
+  background-image: url(blog2.jpg);
+}
+.articlephoto3 {
+  background-image: url(blog3.jpg);
+}
+.articlephoto4 {
+  background-image: url(blog4.jpg);
+}
+.article {
+  position: relative;
+  top: 0;
+  left: 5vw;
+  cursor: pointer;
+}
+.a4 {
+  margin-bottom: 100px;
+}
+.blogPhoto {
+  width: 100%;
+  height: 30vh;
+  background-position: center;
+  background-size: cover;
+}
+.article > h2 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #444;
+  margin: 8px 0 5px 0;
+}
+.article > h3 {
+  font-size: 12px;
+}
+.articleLine {
+  width: 50px;
+  height: 3px;
+  background-color: #ff00ff;
+  margin: 10px 0;
+}
+.article > p {
+  font-size: 14px;
+  margin: 10px 0 40px;
+  line-height: 18px;
+  font-family: "Cardo", serif;
+}
+
+@media (min-width: 768px) and (orientation: portrait) {
+  .blogName {
+    margin: 100px 0;
+  }
+  h2.blogTitle {
+    font-size: 45px;
+  }
+  .article > h2 {
+    font-size: 24px;
+  }
+  .article > h3 {
+    font-size: 14px;
+  }
+  .articleLine {
+    width: 60px;
+  }
+  .article > p {
+    font-size: 16px;
+    margin: 10px 0 40px;
+    line-height: 22px;
+    width: 80%;
+  }
+}
+@media (orientation: landscape) {
+  .blogPhoto {
+    height: 50vh;
+  }
+  .article > p {
+    width: 80%;
+  }
+  @media (min-width: 1024px) and (orientation: landscape) {
+    .blogName {
+      margin: 130px 0;
+    }
+    h2.blogTitle {
+      font-size: 45px;
+    }
+    .articleWrapper {
+      margin-bottom: 100px;
+    }
+    .article {
+      position: relative;
+      top: 0;
+      left: 10vw;
+      width: 40vw;
+    }
+    .blogPhoto {
+      width: 80%;
+      height: 30vh;
+      background-position: center;
+      background-size: cover;
+    }
+    .article > h2 {
+      font-size: 24px;
+    }
+    .article > h3 {
+      font-size: 14px;
+    }
+    .articleLine {
+      width: 60px;
+    }
+    .article > p {
+      font-size: 16px;
+      margin: 10px 0 40px;
+      line-height: 22px;
+      width: 80%;
+    }
+  }
+  @media (min-width: 1200px) and (orientation: landscape) {
+    .articleWrapper {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      width: 100vw;
+      margin-bottom: 30px;
+    }
+    .article {
+      position: relative;
+      top: 0;
+      left: 0;
+      width: 20vw;
+    }
+    .blogPhoto {
+      width: 90%;
+      height: 30vh;
+      background-position: center;
+      background-size: cover;
+    }
+    .article > p {
+      width: 100%;
+    }
+  }
+  @media (min-width: 1920px) and (orientation: landscape) {
+    .article {
+      width: 15vw;
+    }
+    .blogPhoto {
+      height: 25vh;
+    }
+  }
+}
+
+/* Contact */
+
+section#contact {
+  background-image: url(gwiazdy.jpg);
+  background-position: center;
+  background-attachment: fixed;
+}
+.triangle {
+  position: relative;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -2%);
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 20vw 50vw 0 50vw;
+  border-color: white transparent transparent transparent;
+}
+.contactName {
+  display: inline-block;
+  position: relative;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 50px;
+  border-bottom: 4px solid white;
+  border-radius: 7%;
+}
+h2.contactTitle {
+  font-size: 30px;
+  font-weight: 700;
+  color: white;
+  text-transform: uppercase;
+}
+.contactWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.contactWrapper > p {
+  color: lime;
+  text-align: center;
+  font-size: 11px;
+  margin: 25px 0;
+}
+input,
+textarea {
+  width: 80%;
+  background-color: black;
+  font-size: 16px;
+  color: white;
+  margin: 2px 0;
+  border: 0px;
+}
+input {
+  height: 30px;
+}
+textarea {
+  height: 100px;
+}
+button {
+  position: relative;
+  z-index: 1;
+  width: 140px;
+  height: 40px;
+  top: 0;
+  left: 40%;
+  margin: 3px 0 100px;
+  transform: translateX(-50%);
+  background-color: transparent;
+  color: white;
+  font-size: 20px;
+  border: 2px solid white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+button:hover {
+  background-color: deepskyblue;
+  color: black;
+}
+
+@media (min-width: 768px) {
+  .triangle {
+    border-width: 10vw 50vw 0 50vw;
+  }
+  h2.contactTitle {
+    font-size: 48px;
+    margin-top: 50px;
+  }
+  .contactWrapper > p {
+    margin: 50px 0 50px 0;
+    font-size: 18px;
+  }
+  input,
+  textarea {
+    width: 60%;
+    font-size: 18px;
+  }
+  input {
+    height: 40px;
+  }
+  textarea {
+    height: 150px;
+  }
+  button {
+    left: 30%;
+  }
+}
+@media (orientation: landscape) {
+  .triangle {
+    border-width: 12vw 50vw 0 50vw;
+  }
+}
+@media (min-width: 840px) and (orientation: landscape) {
+  .triangle {
+    border-width: 10vw 50vw 0 50vw;
+  }
+}
+@media (min-width: 1200px) and (orientation: landscape) {
+  .triangle {
+    border-width: 10vw 90vw 0 90vw;
+  }
+  .contactWrapper > p {
+    margin: 40px 0;
+    font-size: 18px;
+  }
+  input,
+  textarea {
+    width: 35%;
+    font-size: 18px;
+  }
+  input {
+    height: 40px;
+  }
+  textarea {
+    height: 150px;
+  }
+  button {
+    left: 17.5%;
+  }
+}
+@media (min-width: 1920px) and (orientation: landscape) {
+  .triangle {
+    border-width: 10vw 100vw 0 100vw;
+  }
+  input,
+  textarea {
+    width: 25%;
+    font-size: 18px;
+  }
+  input {
+    height: 40px;
+  }
+  textarea {
+    height: 180px;
+  }
+  button {
+    left: 12.5%;
+  }
+}
+
+footer {
+  background-color: black;
+}
+
+.arrowUp {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-shadow: 0 10px;
+  font-size: 28px;
+  text-align: center;
+  line-height: 45px;
+  background-color: #ff00ff;
+  color: white;
+  cursor: pointer;
+}
+.footerIcons {
+  display: flex;
+  justify-content: space-between;
+  max-width: 280px;
+  margin: 0 auto;
+}
+.footerIcon {
+  width: 50px;
+  height: 50px;
+  background-color: #333;
+  color: white;
+  text-align: center;
+  text-shadow: 0 -50px;
+  overflow: hidden;
+  line-height: 50px;
+  font-size: 20px;
+  cursor: pointer;
+  transition: 0.4s;
+}
+footer > p {
+  text-align: center;
+  line-height: 80px;
+  color: #999;
+  text-transform: uppercase;
+  opacity: 0.5;
+}
+.footerIcon i {
+  transition: 0.4s;
+}
+.footerIcon:hover {
+  background-color: deepskyblue;
+}
+.footerIcon:hover i {
+  transform: translatey(50px);
+}
